@@ -1,0 +1,53 @@
+{
+    "name": "healthcare-network-hospital",
+    "version": "1.0.0",
+    "mspID":"HospitalMSP",
+    "channels": {
+        "healthcarechannel": {
+            "orderers": [
+                "orderer"
+            ],
+            "peers": {
+                "hospital-peer1": {}
+            }
+        }
+    },
+    "client": {
+        "organization": "hospital",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "organizations": {
+        "hospital": {
+            "mspid": "HospitalMSP",
+            "peers": [
+                "hospital-peer1"
+            ],
+            "certificateAuthorities": [
+                "ca.server.com"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer": {
+            "url": "grpc://localhost:7050"
+        }
+    },
+    "peers": {
+        "hospital-peer1": {
+            "url": "grpc://localhost:7051"
+        }
+    },
+    "certificateAuthorities": {
+        "ca.server.com": {
+            "url": "http://127.0.0.1:7054",
+            "caName": "ca.server.com"
+        }
+    }
+}

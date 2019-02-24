@@ -1,0 +1,53 @@
+{
+    "name": "healthcare-network-lab",
+    "version": "1.0.0",
+    "mspID":"LabMSP",
+    "channels": {
+        "healthcarechannel": {
+            "orderers": [
+                "orderer"
+            ],
+            "peers": {
+                "lab-peer1": {}
+            }
+        }
+    },
+    "client": {
+        "organization": "lab",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "organizations": {
+        "lab":{
+            "mspid": "LabMSP",
+            "peers": [
+                "lab-peer1"
+            ],
+            "certificateAuthorities": [
+                "ca.server.com"
+            ]
+        }
+    },
+    "orderers": {
+        "orderer": {
+            "url": "grpc://localhost:7050"
+        }
+    },
+    "peers": {
+        "lab-peer1": {
+            "url": "grpc://localhost:9051"
+        }
+    },
+    "certificateAuthorities": {
+        "ca.server.com": {
+            "url": "http://127.0.0.1:7054",
+            "caName": "ca.server.com"
+        }
+    }
+}
