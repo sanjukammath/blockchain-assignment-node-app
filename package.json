@@ -1,0 +1,24 @@
+{
+  "name": "blockchain-assignment-node-app",
+  "version": "1.0.0",
+  "description": "This is the node app to interact with the chaincode.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjukammath/blockchain-assignment-node-app.git"
+  },
+  "author": "Sanjay S B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sanjukammath/blockchain-assignment-node-app/issues"
+  },
+  "homepage": "https://github.com/sanjukammath/blockchain-assignment-node-app#readme",
+  "dependencies": {
+    "fabric-ca-client": "^1.4.0",
+    "fabric-client": "^1.4.0",
+    "fabric-network": "^1.4.0"
+  }
+}
