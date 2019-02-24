@@ -15,7 +15,7 @@ in the node-app root folder
 
 >node registerPatient3.js
 
->node registerlabtech3.js
+>node registerLabTech3.js
 
 >node createRecord.js
 
