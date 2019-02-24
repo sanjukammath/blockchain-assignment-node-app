@@ -8,7 +8,7 @@ const ccpPath = path.resolve(__dirname, 'connection-hospital.json');
 const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
 const ccp = JSON.parse(ccpJSON);
 
-const username = "patient01"
+const username = "patient03"
 
 async function main() {
     try {
@@ -21,7 +21,7 @@ async function main() {
         // Check to see if we've already enrolled the user.
         const userExists = await wallet.exists(username);
         if (!userExists) {
-            console.log('An identity for the user "user1" does not exist in the wallet');
+            console.log(`An identity for the user ${username} does not exist in the wallet`);
             console.log('Run the registerUser.js application before retrying');
             return;
         }
@@ -39,7 +39,7 @@ async function main() {
         // Evaluate the specified transaction.
         // queryCar transaction - requires 1 argument, ex: ('queryCar', 'CAR4')
         // queryAllCars transaction - requires no arguments, ex: ('queryAllCars')
-        const result = await contract.evaluateTransaction("queryRecord","patient01@hospital.com");
+        const result = await contract.evaluateTransaction("queryRecord","patient03@hospital.com");
         console.log(`Transaction has been evaluated, result is: ${result.toString()}`);
 
     } catch (error) {

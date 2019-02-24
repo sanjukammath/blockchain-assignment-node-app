@@ -40,12 +40,13 @@ async function main() {
 
         // Get the CA client object from the gateway for interacting with the CA.
         const ca = gateway.getClient().getCertificateAuthority();
+        const adminIdentity = gateway.getCurrentIdentity();
 
 
         // Register the user, enroll the user, and import the new identity into the wallet.
         const attrs = [{name: 'email', value:'patient03@hospital.com'},
-                    {name:'doctor', value:'true'},
-                    {name:'patient', value:'false'},
+                    {name:'doctor', value:'false'},
+                    {name:'patient', value:'true'},
                     {name:'lab', value:'false'},]
         
         const attr_reqs = [{name: 'email', optional:false }, 

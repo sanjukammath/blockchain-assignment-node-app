@@ -40,6 +40,7 @@ async function main() {
 
         // Get the CA client object from the gateway for interacting with the CA.
         const ca = gateway.getClient().getCertificateAuthority();
+        const adminIdentity = gateway.getCurrentIdentity();
 
 
         // Register the user, enroll the user, and import the new identity into the wallet.
